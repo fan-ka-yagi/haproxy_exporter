@@ -408,7 +408,7 @@ func (e *Exporter) exportCsvFields(metrics map[int]*prometheus.Desc, csvRow []st
 			e.csvParseFailures.Inc()
 			continue
 		}
-		ch <- prometheus.MustNewConstMetric(metric, prometheus.GaugeValue, value, labels...)
+		ch <- prometheus.MustNewConstMetric(metric, prometheus.CounterValue, value, labels...)
 	}
 }
 
